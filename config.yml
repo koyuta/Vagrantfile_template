@@ -1,0 +1,35 @@
+app:
+  box: "ubuntu/xenial64"
+  hosts:
+    - hostname: "app-01"
+      lips:
+        - "192.168.0.1"
+    - hostname: "app-02"
+      lips:
+        - "192.168.0.2"
+  syncs:
+    - host: "application"
+      guest: "/srv/application"
+      dmode: "777"
+      fmode: "777"
+    - host: "tmp"
+      guest: "/tmp"
+  provision:
+    shell: "app-provision.sh"
+mysql:
+  box: "centos/7"
+  hosts:
+    - hostname: "mysql"
+      lips:
+        - "192.168.0.11"
+  provision:
+    shell: "mysql-provision.sh"
+redis:
+  box: "centos/7"
+  hosts:
+    - hostname: "redis"
+      lips:
+        - "192.168.0.101"
+        - "192.168.0.102"
+  provision:
+    shell: "redis-provision.sh"

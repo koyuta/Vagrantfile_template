@@ -15,7 +15,7 @@ app:
     - host: "tmp"
       guest: "/tmp"
   provision:
-    shell: "app-provision.sh"
+    - "app-provision.sh"
 mysql:
   box: "centos/7"
   hosts:
@@ -23,7 +23,7 @@ mysql:
       lips:
         - "192.168.0.11"
   provision:
-    shell: "mysql-provision.sh"
+    - "mysql-provision.sh"
 redis:
   box: "centos/7"
   hosts:
@@ -32,4 +32,4 @@ redis:
         - "192.168.0.101"
         - "192.168.0.102"
   provision:
-    shell: "redis-provision.sh"
+    - "redis-provision.sh"

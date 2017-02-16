@@ -31,9 +31,11 @@ Vagrant.configure("2") do |config|
 				end
 
 				if confs.has_key?("provision") then
-					role.vm.provision :shell do |shell|
-						shell.path = confs["provision"]["shell"]
-						shell.privileged = true
+					confs["provision"].each do |script|
+						role.vm.provision :shell do |shell|
+							shell.path = script
+							shell.privileged = true
+						end
 					end
 				end
 			end

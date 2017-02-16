@@ -5,7 +5,6 @@ require "yaml"
 conf = YAML.load_file("config.yml")
 
 Vagrant.configure("2") do |config|
-	config.vbguest.auto_update = false
 	config.ssh.insert_key = false
 
 	conf.each do |role, confs|

@@ -38,6 +38,17 @@ Vagrant.configure("2") do |config|
 						end
 					end
 				end
+
+				if confs.has_key?("itamae") then
+					confs["itamae"].each do |itamae|
+						role.vm.provision :shell do |shell|
+							shell.inline = <<-SHELL
+cd /tmp
+PASSWORD=#{ENV['PASSWORD']} bundle exec itamae local -j #{itamae["json"]} #{itamae["recipe"]}
+							SHELL
+						end
+					end
+				end
 			end
 		end
 	end

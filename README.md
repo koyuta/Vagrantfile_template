@@ -13,5 +13,8 @@ ${server_name}:
       dmode: "${dir_mode}"
       fmode: "${file_mode}"
   provision:
-    recipe: "${provision_shell}"
+    - "${provision_shell}"
+	itamae:
+		- recipe: ${itamae_script}
+		  json: ${itamae_json_node}
 ```

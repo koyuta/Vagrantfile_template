@@ -10,10 +10,10 @@ app:
   syncs:
     - host: "application"
       guest: "/srv/application"
-      dmode: "777"
-      fmode: "777"
-    - host: "tmp"
-      guest: "/tmp"
+      dmode: "644"
+      fmode: "644"
+    - host: "tmp/hoge"
+      guest: "/tmp/hoge"
   provision:
     - "app-provision.sh"
 mysql:

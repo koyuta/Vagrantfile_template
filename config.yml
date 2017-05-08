@@ -12,8 +12,8 @@ app:
       guest: "/srv/application"
       dmode: "644"
       fmode: "644"
-    - host: "tmp/hoge"
-      guest: "/tmp/hoge"
+    - host: "init.sh"
+      guest: "/tmp/init.sh"
   provision:
     - "app-provision.sh"
 mysql:
